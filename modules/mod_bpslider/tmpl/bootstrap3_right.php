@@ -13,7 +13,7 @@ defined('_JEXEC') or die;
 
 ?>
 <?php if ($has_desc): ?>
-    <div class="row" style="background-url(<?php echo $slide_image ?>);">
+    <div class="row" style="background-image:url('<?php echo $slide_image ?>');">
 
         <!-- Desktop layout-->
         <div class="col-xs-12 col-lg-4 col-lg-offset-8">
