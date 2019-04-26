@@ -22,9 +22,13 @@ if ($params->get('effect', 'slide-vertical')) {
     $doc->addScriptDeclaration("
         var {$id}CountHeight = function(){
             var maxHeight = 0;
-            $('#$id .swiper-slide>div').each(function(idx,el){
+            var slides = $('#$id .swiper-slide>div') 
+            slides.each(function(idx,el){
                 var h = $(el).outerHeight();
                 if( h>maxHeight) maxHeight = h; 
+            });
+            slides.each(function(idx,el){
+                $(el).css('height', maxHeight+'px');
             });
             
             $('#$id').css('height', maxHeight+'px');
