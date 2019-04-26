@@ -10,6 +10,9 @@
         <echo msg="Creating module directory"/>
         <mkdir dir="./.build/mod_bpslider"/>
 
+        <echo msg="Building assets with Webpack"/>
+        <exec command="npm run prod" passthru="true" checkreturn="true"/>
+
         <echo msg="Building module installer"/>
         <copy todir="./.build/mod_bpslider">
             <fileset dir="./modules/mod_bpslider">

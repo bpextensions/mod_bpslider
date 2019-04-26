@@ -6,6 +6,7 @@ Encore
     .setPublicPath('/modules/mod_bpslider/assets/')
     .cleanupOutputBeforeBuild()
     .enableBuildNotifications()
+    .enableSassLoader()
     .enableVersioning(Encore.isProduction())
     .disableSingleRuntimeChunk()
     .enableSourceMaps(!Encore.isProduction())
@@ -17,7 +18,8 @@ Encore
         jquery: 'jQuery'
     })
     .addEntry('module', [
-        './modules/mod_bpslider/.dev/js/module.js'
+        './modules/mod_bpslider/.dev/js/module.js',
+        './modules/mod_bpslider/.dev/scss/module.scss',
     ])
     .configureFilenames({
         css: '[name]-[hash:6].css',

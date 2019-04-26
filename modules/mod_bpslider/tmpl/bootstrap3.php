@@ -68,13 +68,13 @@ $doc->addScriptDeclaration("
 
         <?php if ($navigation): ?>
             <!-- Add Arrows -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next" id="<?php echo $id ?>-swiper-button-next"></div>
+            <div class="swiper-button-prev" id="<?php echo $id ?>-swiper-button-prev"></div>
         <?php endif ?>
 
         <?php if ($pagination): ?>
             <!-- Add Pagination -->
-            <div class="swiper-pagination"></div>
+            <div class="swiper-pagination" id="<?php echo $id ?>-swiper-pagination"></div>
         <?php endif ?>
 
     </div>

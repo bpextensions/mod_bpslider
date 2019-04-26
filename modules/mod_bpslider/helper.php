@@ -84,14 +84,14 @@ abstract class ModBPSliderHelper
 
         if ($navigation) {
             $options['navigation'] = [
-                'nextEl' => '#' . $id . ' .swiper-button-next',
-                'prevEl' => '#' . $id . ' .swiper-button-prev',
+                'nextEl' => '#' . $id . '-swiper-button-next',
+                'prevEl' => '#' . $id . '-swiper-button-prev',
             ];
         }
 
         if ($pagination) {
             $options['pagination'] = [
-                'el' => '#' . $id . ' .swiper-pagination',
+                'el' => '#' . $id . '-swiper-pagination',
                 'clickable' => true
             ];
         }
