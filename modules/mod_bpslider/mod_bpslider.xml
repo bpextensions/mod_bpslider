@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.8" client="site" method="upgrade">
+    <name>mod_bpslider</name>
+    <author>${author.name}</author>
+    <creationDate>${build.date}</creationDate>
+    <copyright>Copyright (C) ${build.year} ${copyrights}. All rights reserved.</copyright>
+    <license>${license.name}, see ${license.url}</license>
+    <authorEmail>${author.email}</authorEmail>
+    <authorUrl>${author.url}</authorUrl>
+    <version>${build.version}</version>
+    <description>MOD_BPSLIDER_XML_DESCRIPTION</description>
+
+    <files>
+        <folder>assets</folder>
+        <folder>forms</folder>
+        <folder>language</folder>
+        <folder>tmpl</folder>
+        <filename>helper.php</filename>
+        <filename module="mod_bpslider">mod_bpslider.php</filename>
+    </files>
+
+    <languages folder="language">
+        <language tag="pl-PL">pl-PL/pl-PL.mod_bpslider.ini</language>
+        <language tag="pl-PL">pl-PL/pl-PL.mod_bpslider.sys.ini</language>
+        <language tag="en-GB">en-GB/en-GB.mod_bpslider.ini</language>
+        <language tag="en-GB">en-GB/en-GB.mod_bpslider.sys.ini</language>
+    </languages>
+
+    <updateservers>
+        <server type="extension" priority="5" name="BP Form">
+            https://raw.githubusercontent.com/bestproject/mod_bpslider/updates/update.xml
+        </server>
+    </updateservers>
+
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="autoplay" type="radio" default="1"
+                       class="btn-group btn-group-yesno"
+                       label="MOD_BPSLIDER_FIELD_AUTOPLAY_LABEL"
+                       description="MOD_BPSLIDER_FIELD_AUTOPLAY_LABEL">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="autoplay_delay" type="integer" first="1" step="1" last="30" filter="INT" default="4"
+                       showon="autoplay:1"
+                       label="MOD_BPSLIDER_FIELD_AUTOPLAY_DELAY_LABEL"
+                       description="MOD_BPSLIDER_FIELD_AUTOPLAY_DELAY_DESC"
+                />
+                <field name="transition_time" type="integer" first="100" step="100" last="5000" filter="INT"
+                       default="100"
+                       label="MOD_BPSLIDER_FIELD_TRANSITION_TIME_LABEL"
+                       description="MOD_BPSLIDER_FIELD_TRANSITION_TIME_DESC"
+                />
+                <field name="pagination" type="radio" default="1"
+                       class="btn-group btn-group-yesno"
+                       label="MOD_BPSLIDER_FIELD_PAGINATION_LABEL"
+                       description="MOD_BPSLIDER_FIELD_PAGINATION_LABEL">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="navigation" type="radio" default="1"
+                       class="btn-group btn-group-yesno"
+                       label="MOD_BPSLIDER_FIELD_NAVIGATION_LABEL"
+                       description="MOD_BPSLIDER_FIELD_NAVIGATION_LABEL">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="loop" type="radio" default="1"
+                       class="btn-group btn-group-yesno"
+                       label="MOD_BPSLIDER_FIELD_LOOP_LABEL"
+                       description="MOD_BPSLIDER_FIELD_LOOP_LABEL">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+            </fieldset>
+            <fieldset name="slides"
+                      label="MOD_BPSLIDER_FIELDSET_SLIDES_LABEL"
+                      description="MOD_BPSLIDER_FIELDSET_SLIDES_DESC"
+            >
+                <field name="slides" type="subform" required="true" min="1"
+                       formsource="modules/mod_bpslider/forms/slides.xml" multiple="true"
+                       label="MOD_BPSLIDER_FIELD_SLIDES_LABEL"
+                       description="MOD_BPSLIDER_FIELD_SLIDES_DESC"
+                />
+            </fieldset>
+            <fieldset
+                    name="advanced">
+                <field
+                        name="layout"
+                        type="modulelayout"
+                        default="default"
+                        label="JFIELD_ALT_LAYOUT_LABEL"
+                        description="JFIELD_ALT_MODULE_LAYOUT_DESC">
+
+                </field>
+
+                <field
+                        name="moduleclass_sfx"
+                        type="textarea" rows="3"
+                        label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+                        description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"/>
+
+                <field
+                        name="cache"
+                        type="list"
+                        default="1"
+                        label="COM_MODULES_FIELD_CACHING_LABEL"
+                        description="COM_MODULES_FIELD_CACHING_DESC">
+                    <option
+                            value="1">JGLOBAL_USE_GLOBAL
+                    </option>
+                    <option
+                            value="0">COM_MODULES_FIELD_VALUE_NOCACHING
+                    </option>
+                </field>
+
+                <field
+                        name="cache_time"
+                        type="text"
+                        default="900"
+                        label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+                        description="COM_MODULES_FIELD_CACHE_TIME_DESC"/>
+            </fieldset>
+        </fields>
+    </config>
+
+</extension>

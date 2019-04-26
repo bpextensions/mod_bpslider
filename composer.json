@@ -1,0 +1,12 @@
+{
+    "scripts": {
+        "build": "phing"
+    },
+    "require-dev": {
+        "phing/phing": "2.*",
+        "php": ">=7.0"
+    },
+    "require": {
+        "ext-json": "*"
+    }
+}

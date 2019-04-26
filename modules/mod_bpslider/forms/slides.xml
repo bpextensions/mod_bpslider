@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+
+    <field name="image" type="media"
+           label="MOD_BPSLIDER_FIELD_SLIDES_IMAGE_LABEL"
+           description="MOD_BPSLIDER_FIELD_SLIDES_IMAGE_DESC"/>
+
+    <field name="title" type="text"
+           label="MOD_BPSLIDER_FIELD_SLIDES_TITLE_LABEL"
+           description="MOD_BPSLIDER_FIELD_SLIDES_TITLE_DESC"
+           class="input-xxlarge input-large-text"
+           size="40"
+           maxlength="100"
+    />
+
+    <field name="text" type="editor" rows="3" filter="safehtml"
+           buttons="article, image, contact, menu"
+           label="MOD_BPSLIDER_FIELD_SLIDES_TEXT_LABEL"
+           description="MOD_BPSLIDER_FIELD_SLIDES_TEXT_DESC"/>
+
+    <field name="button" type="radio" filter="INT"
+           default="0"
+           class="btn-group btn-group-yesno"
+           label="MOD_BPSLIDER_FIELD_SLIDES_BUTTON_LABEL"
+           description="MOD_BPSLIDER_FIELD_SLIDES_BUTTON_DESC"
+    >
+        <option value="0">JNO</option>
+        <option value="1">JYES</option>
+    </field>
+
+    <field name="button_title" type="text" showon="button:1"
+           label="MOD_BPSLIDER_FIELD_SLIDES_BUTTON_TITLE_LABEL"
+           description="MOD_BPSLIDER_FIELD_SLIDES_BUTTON_TITLE_DESC"/>
+
+    <field name="button_type" type="radio" filter="WORD" showon="button:1"
+           default="url"
+           class="btn-group btn-group-yesno"
+           label="MOD_BPSLIDER_FIELD_SLIDES_BUTTON_TYPE_LABEL"
+           description="MOD_BPSLIDER_FIELD_SLIDES_BUTTON_TYPE_DESC"
+    >
+        <option value="url">MOD_BPSLIDER_FIELD_SLIDES_BUTTON_TYPE_OPTION_URL</option>
+        <option value="menu">MOD_BPSLIDER_FIELD_SLIDES_BUTTON_TYPE_OPTION_MENU</option>
+        <option value="article">MOD_BPSLIDER_FIELD_SLIDES_BUTTON_TYPE_OPTION_ARTICLE</option>
+    </field>
+
+    <field name="button_url" type="text" showon="button_type:url[AND]button:1"
+           label="MOD_BPSLIDER_FIELD_SLIDES_BUTTON_URL_LABEL"
+           description="MOD_BPSLIDER_FIELD_SLIDES_BUTTON_URL_DESC"/>
+
+    <field name="button_menu" type="modal_menu" showon="button_type:menu[AND]button:1"
+           addfieldpath="/administrator/components/com_menus/models/fields"
+           select="true"
+           new="true"
+           edit="true"
+           clear="true"
+           filter="integer"
+           label="MOD_BPSLIDER_FIELD_SLIDES_BUTTON_MENU_LABEL"
+           description="MOD_BPSLIDER_FIELD_SLIDES_BUTTON_MENU_DESC"/>
+
+    <field name="button_article" type="modal_article" showon="button_type:article[AND]button:1"
+           addfieldpath="/administrator/components/com_content/models/fields"
+           label="MOD_BPSLIDER_FIELD_SLIDES_BUTTON_ARTICLE_LABEL"
+           description="MOD_BPSLIDER_FIELD_SLIDES_BUTTON_ARTICLE_DESC"
+           select="true"
+           new="true"
+           edit="true"
+           clear="true"
+    />
+
+    <field name="layout" type="list" required="true" default="left"
+           label="MOD_BPSLIDER_FIELD_SLIDES_LAYOUT_LABEL"
+           description="MOD_BPSLIDER_FIELD_SLIDES_LAYOUT_DESC"
+           filter="WORD">
+        <option value="left">MOD_BPSLIDER_FIELD_SLIDES_LAYOUT_OPTION_LEFT</option>
+        <option value="right">MOD_BPSLIDER_FIELD_SLIDES_LAYOUT_OPTION_RIGHT</option>
+        <option value="centered">MOD_BPSLIDER_FIELD_SLIDES_LAYOUT_OPTION_CENTERED</option>
+    </field>
+
+</form>
