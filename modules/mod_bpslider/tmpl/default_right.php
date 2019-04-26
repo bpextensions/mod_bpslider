@@ -54,5 +54,5 @@ defined('_JEXEC') or die;
         </div>
     </div>
 <?php else: ?>
-    <img src="<?php echo $slide_image ?>" alt="<?php echo htmlentities($title) ?>">
+    <img src="<?php echo $slide_image ?>" alt="<?php echo htmlentities($slide_title) ?>">
 <?php endif ?>
