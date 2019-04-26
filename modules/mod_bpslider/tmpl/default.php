@@ -64,7 +64,7 @@ $doc->addScriptDeclaration("
                 $slide_button = $slide->button;
                 $slide_button_type = $slide->button_type;
                 $slide_button_title = $slide->button_title;
-                $has_desc = !empty($slide_title) or !empty($slide_text);
+                $has_desc = (!empty($slide_title) or !empty($slide_text));
                 ?>
                 <div class="swiper-slide">
                     <?php require ModuleHelper::getLayoutPath('mod_bpslider', $layout . '_' . $slide->layout) ?>
