@@ -17,36 +17,27 @@ JHtml::_('jquery.framework');
 $doc->addScript(ModBPSliderHelper::getAssetUrl('/modules/mod_bpslider/assets/module.js'), ['version' => 'auto']);
 $doc->addStyleSheet(ModBPSliderHelper::getAssetUrl('/modules/mod_bpslider/assets/module.css'), ['version' => 'auto']);
 
-// Process options
-$options = [
-    'speed' => $transition_time
-];
-
-if ($navigation) {
-    $options['navigation'] = [
-        'nextEl' => '#' . $id . ' .swiper-button-next',
-        'prevEl' => '#' . $id . ' .swiper-button-prev',
-    ];
-}
-
-if ($pagination) {
-    $options['pagination'] = [
-        'el' => '#' . $id . ' .swiper-pagination',
-        'clickable' => true
-    ];
-}
-
-if ($autoplay) {
-    $options['autoplay'] = [
-        'delay' => $autoplay_delay
-    ];
-}
-
-if ($loop) {
-    $options['loop'] = 'true';
-}
-
 $options = json_encode((object)$options);
+
+// Fix slider height for vertical height
+if ($params->get('effect', 'slide-vertical')) {
+    $doc->addScriptDeclaration("
+        var {$id}CountHeight = function(){
+            var maxHeight = 0;
+            $('#$id .swiper-slide>div').each(function(idx,el){
+                var h = $(el).outerHeight();
+                if( h>maxHeight) maxHeight = h; 
+            });
+            
+            $('#$id').css('height', maxHeight+'px');
+        }
+        jQuery(function($){
+            {$id}CountHeight();
+            $(window).resize({$id}CountHeight);
+        });
+    ");
+}
+
 $doc->addScriptDeclaration("
     jQuery(function($){
         var ModBPSlider{$module->id} = new Swiper('#$id', $options);

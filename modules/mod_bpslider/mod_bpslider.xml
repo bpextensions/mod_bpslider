@@ -42,6 +42,16 @@
                     <option value="1">JYES</option>
                     <option value="0">JNO</option>
                 </field>
+                <field name="effect" type="list" default="slide-horizontal"
+                       label="MOD_BPSLIDER_FIELD_EFFECT_LABEL"
+                       description="MOD_BPSLIDER_FIELD_EFFECT_LABEL">
+                    <option value="slide-vertical">MOD_BPSLIDER_FIELD_EFFECT_SLIDE_VERTICAL_LABEL</option>
+                    <option value="slide-horizontal">MOD_BPSLIDER_FIELD_EFFECT_SLIDE_HORIZONTAL_LABEL</option>
+                    <option value="fade">MOD_BPSLIDER_FIELD_EFFECT_FADE_LABEL</option>
+                    <option value="cube">MOD_BPSLIDER_FIELD_EFFECT_CUBE_LABEL</option>
+                    <option value="coverflow">MOD_BPSLIDER_FIELD_EFFECT_COVERFLOW_LABEL</option>
+                    <option value="flip">MOD_BPSLIDER_FIELD_EFFECT_FLIP_LABEL</option>
+                </field>
                 <field name="autoplay_delay" type="integer" first="1" step="1" last="30" filter="INT" default="4"
                        showon="autoplay:1"
                        label="MOD_BPSLIDER_FIELD_AUTOPLAY_DELAY_LABEL"

@@ -26,13 +26,11 @@ require_once __DIR__ . '/helper.php';
 $doc = Factory::getDocument();
 $moduleclass_sfx = htmlspecialchars($params->get('moduleclass_sfx'));
 $layout = $params->get('layout', 'default');
-$navigation = (bool)$params->get('navigation', 1);
-$pagination = (bool)$params->get('pagination', 1);
-$loop = (bool)$params->get('loop', 1);
-$autoplay = (bool)$params->get('autoplay', 1);
-$autoplay_delay = (int)$params->get('autoplay_delay', 4) * 1000;
-$transition_time = (int)$params->get('transition_time', 100);
 $slides = (array)$params->get('slides', []);
 $id = 'modbpslider' . $module->id;
+$params->def('id', $id);
+$navigation = (bool)$params->get('navigation', 1);
+$pagination = (bool)$params->get('pagination', 1);
+$options = ModBPSliderHelper::getOptions($params);
 
 require ModuleHelper::getLayoutPath('mod_bpslider', $layout);
