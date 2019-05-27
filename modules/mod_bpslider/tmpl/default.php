@@ -20,7 +20,7 @@ $doc->addStyleSheet(ModBPSliderHelper::getAssetUrl('/modules/mod_bpslider/assets
 $options = json_encode((object)$options);
 
 // Fix slider height for vertical height
-if ($params->get('effect', 'slide-vertical')) {
+if ($params->get('effect', '') === 'slide-vertical') {
     $doc->addScriptDeclaration("
         var {$id}CountHeight = function(){
             var maxHeight = 0;

@@ -14,7 +14,7 @@ defined('_JEXEC') or die;
 ?>
 <?php if ($has_desc): ?>
     <div class="row text-center justify-content-center swiper-bg-image"
-         style="background-image:url('<?php echo $slide_image ?>');">
+        <?php if (!empty($slide_image)): ?> style="background-image:url('<?php echo $slide_image ?>');"<?php endif ?>>
 
         <!-- Desktop layout-->
         <div class="col-12 col-lg-6 col-xl-4">
