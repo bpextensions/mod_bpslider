@@ -15,7 +15,8 @@ Encore
         include_node_modules: ['swiper', 'dom7', 'ssr-window'],
     })
     .addExternals({
-        jquery: 'jQuery'
+        jquery: 'jQuery',
+        joomla: 'Joomla',
     })
     .addEntry('module', [
         './modules/mod_bpslider/.dev/js/module.js',
