@@ -29,6 +29,9 @@ Here are instructions how to build installation package from scratch.
 
 ## Changelog
 
+### v1.0.2
+- Just fixing release tag.
+
 ### v1.0.1
 - Tests successful. Initial release.
 
