@@ -1,0 +1,22 @@
+/*!
+ * @package     ${package}
+ * @subpackage  ${subpackage}
+ *
+ * @copyright   Copyright (C) ${build.year} ${copyrights}, All rights reserved.
+ * @license     ${license.name}; see ${license.url}
+ *
+ */
+.modbpslider {
+    .modbpslider-padding {
+        padding: 20px;
+        background: rgba(0, 0, 0, .5);
+
+        .title {
+            color: white;
+        }
+
+        .text {
+            color: white;
+        }
+    }
+}

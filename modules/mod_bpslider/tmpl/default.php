@@ -1,6 +1,7 @@
 <?php
 
 use Joomla\CMS\Helper\ModuleHelper;
+use Joomla\Registry\Registry;
 
 defined('_JEXEC') or die;
 
@@ -13,9 +14,14 @@ defined('_JEXEC') or die;
  * @author      ${author.name}
  */
 
+/**
+ * @var Registry $params
+ */
+
 JHtml::_('jquery.framework');
 $doc->addScript(ModBPSliderHelper::getAssetUrl('/modules/mod_bpslider/assets/module.js'), ['version' => 'auto']);
 $doc->addStyleSheet(ModBPSliderHelper::getAssetUrl('/modules/mod_bpslider/assets/module.css'), ['version' => 'auto']);
+$doc->addStyleSheet(ModBPSliderHelper::getAssetUrl('/modules/mod_bpslider/assets/theme.css'), ['version' => 'auto']);
 
 $options = json_encode((object)$options);
 

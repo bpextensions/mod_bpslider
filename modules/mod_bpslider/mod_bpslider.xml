@@ -26,12 +26,6 @@
         <language tag="en-GB">en-GB/en-GB.mod_bpslider.sys.ini</language>
     </languages>
 
-    <updateservers>
-        <server type="extension" priority="5" name="BP Form">
-            https://raw.githubusercontent.com/bestproject/mod_bpslider/updates/update.xml
-        </server>
-    </updateservers>
-
     <config>
         <fields name="params">
             <fieldset name="basic">

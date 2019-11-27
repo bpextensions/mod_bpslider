@@ -18,7 +18,7 @@ defined('_JEXEC') or die;
 
         <!-- Desktop layout-->
         <div class="col-12 col-lg-6 col-xl-4">
-            <div class="wrapper">
+            <div class="wrapper modbpslider-padding">
                 <?php if (!empty($slide_title)): ?>
                     <h4 class="title"><?php echo $slide_title ?></h4>
                 <?php endif ?>

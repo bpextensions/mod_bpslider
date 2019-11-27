@@ -13,11 +13,11 @@ defined('_JEXEC') or die;
 
 ?>
 <?php if ($has_desc): ?>
-    <div class="row text-center swiper-bg-image" <?php if (!empty($slide_image)): ?> style="background-image:url('<?php echo $slide_image ?>');"<?php endif ?>>
+    <div class="row-fluid text-center swiper-bg-image" <?php if (!empty($slide_image)): ?> style="background-image:url('<?php echo $slide_image ?>');"<?php endif ?>>
 
         <!-- Desktop layout-->
         <div class="span4 offset4 visible-desktop visible-tablet">
-            <div class="wrapper">
+            <div class="wrapper modbpslider-padding">
                 <?php if (!empty($slide_title)): ?>
                     <h4 class="title"><?php echo $slide_title ?></h4>
                 <?php endif ?>
@@ -36,7 +36,7 @@ defined('_JEXEC') or die;
 
         <!-- Mobile layout-->
         <div class="span12 hidden-desktop hidden-tablet">
-            <div class="wrapper">
+            <div class="wrapper modbpslider-padding">
                 <?php if (!empty($slide_title)): ?>
                     <h4 class="title"><?php echo $slide_title ?></h4>
                 <?php endif ?>
