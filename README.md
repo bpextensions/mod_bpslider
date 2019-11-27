@@ -29,5 +29,8 @@ Here are instructions how to build installation package from scratch.
 
 ## Changelog
 
+### v1.0.1
+- Tests successful. Initial release.
+
 ### v1.0.0 beta
 - Initial release.
