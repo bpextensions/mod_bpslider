@@ -18,7 +18,7 @@ Joomla! 3 responsive slider module based on Swiper and Bootstrap.
     - English
     - Polish
 
-## How to build from respository
+## How to build from repository
 If you are a developer and you are willing to build extension from this repo you will need Composer installed globally. 
 Here are instructions how to build installation package from scratch.
 - Prepare a clean Joomla! installation
@@ -28,6 +28,9 @@ Here are instructions how to build installation package from scratch.
 - Your installation zip files should now be read in `/.build` directory.
 
 ## Changelog
+
+### v1.0.3
+- Added updates server, fixed some npm requirements.
 
 ### v1.0.2
 - Just fixing release tag.
