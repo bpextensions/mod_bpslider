@@ -23,13 +23,12 @@ $doc->addScript(ModBPSliderHelper::getAssetUrl('/modules/mod_bpslider/assets/mod
 $doc->addStyleSheet(ModBPSliderHelper::getAssetUrl('/modules/mod_bpslider/assets/module.css'), ['version' => 'auto']);
 $doc->addStyleSheet(ModBPSliderHelper::getAssetUrl('/modules/mod_bpslider/assets/theme.css'), ['version' => 'auto']);
 
-$options = json_encode((object)$options);
-
 // Fix slider height for vertical height
-if ($params->get('effect', '') === 'slide-vertical') {
-    $doc->addScriptDeclaration("
+if ($effect === 'slide-vertical')
+{
+	$doc->addScriptDeclaration("
         var {$id}CountHeight = function(){
-            var maxHeight = 0;
+            var maxHeight = $min_height;
             var slides = $('#$id .swiper-slide>div') 
             slides.each(function(idx,el){
                 var h = $(el).outerHeight();
@@ -48,6 +47,15 @@ if ($params->get('effect', '') === 'slide-vertical') {
     ");
 }
 
+// Min slider height
+if ($min_height)
+{
+	$doc->addStyleDeclaration("
+        #$id .swiper-slide>div{min-height: {$min_height}px};
+    ");
+}
+
+$options = json_encode((object) $options);
 $doc->addScriptDeclaration("
     jQuery(function($){
         var ModBPSlider{$module->id} = new Swiper('#$id', $options);

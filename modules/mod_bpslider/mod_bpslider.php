@@ -23,14 +23,16 @@ require_once __DIR__ . '/helper.php';
 /**
  * @var HtmlDocument $doc
  */
-$doc = Factory::getDocument();
+$doc             = Factory::getDocument();
 $moduleclass_sfx = htmlspecialchars($params->get('moduleclass_sfx'));
-$layout = $params->get('layout', 'default');
-$slides = (array)$params->get('slides', []);
-$id = 'modbpslider' . $module->id;
+$layout          = $params->get('layout', 'default');
+$slides          = (array) $params->get('slides', []);
+$id              = 'modbpslider' . $module->id;
 $params->def('id', $id);
-$navigation = (bool)$params->get('navigation', 1);
-$pagination = (bool)$params->get('pagination', 1);
-$options = ModBPSliderHelper::getOptions($params);
+$navigation = (bool) $params->get('navigation', 1);
+$pagination = (bool) $params->get('pagination', 1);
+$min_height = (int) $params->get('min_height', 0);
+$effect     = $params->get('effect', '');
+$options    = ModBPSliderHelper::getOptions($params);
 
 require ModuleHelper::getLayoutPath('mod_bpslider', $layout);

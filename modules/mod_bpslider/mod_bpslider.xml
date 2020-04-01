@@ -46,6 +46,11 @@
                     <option value="coverflow">MOD_BPSLIDER_FIELD_EFFECT_COVERFLOW_LABEL</option>
                     <option value="flip">MOD_BPSLIDER_FIELD_EFFECT_FLIP_LABEL</option>
                 </field>
+                <field name="min_height" type="text" filter="INT"
+                       default=""
+                       label="MOD_BPSLIDER_FIELD_MIN_HEIGHT_LABEL"
+                       description="MOD_BPSLIDER_FIELD_MIN_HEIGHT_DESC"
+                />
                 <field name="autoplay_delay" type="integer" first="1" step="1" last="30" filter="INT" default="4"
                        showon="autoplay:1"
                        label="MOD_BPSLIDER_FIELD_AUTOPLAY_DELAY_LABEL"
