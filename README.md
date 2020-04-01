@@ -13,6 +13,7 @@ Joomla! 3 responsive slider module based on Swiper and Bootstrap.
     - Enable automatic slide change
     - Manage slide change time and delay
     - Enable slides loop
+    - Minimum slider height
 - Build to work with Bootstrap 4,3 and 2
 - Available translations:
     - English
@@ -28,6 +29,10 @@ Here are instructions how to build installation package from scratch.
 - Your installation zip files should now be read in `/.build` directory.
 
 ## Changelog
+
+### v1.0.4
+- Added missing polish translations.
+- Added minimum slider height setting.
 
 ### v1.0.3
 - Added updates server, fixed some npm requirements.
