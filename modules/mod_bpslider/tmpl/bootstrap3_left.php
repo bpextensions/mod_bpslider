@@ -36,5 +36,9 @@ defined('_JEXEC') or die;
 
     </div>
 <?php else: ?>
-    <img src="<?php echo $slide_image ?>" alt="<?php echo htmlentities($slide_title) ?>">
+	<div
+		class="swiper-bg-image" <?php if (!empty($slide_image)): ?> style="background-image:url('<?php echo $slide_image ?>');"<?php endif ?>>
+		<img src="<?php echo $slide_image ?>" alt="<?php echo htmlentities($slide_title) ?>"
+		     style="width:100%;opacity:0">
+	</div>
 <?php endif ?>
