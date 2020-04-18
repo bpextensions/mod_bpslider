@@ -5,6 +5,7 @@
 !/modules/mod_bpslider/**
 /modules/mod_bpslider/assets/*
 
+!/.dev
 !/LICENSE
 !/README.md
 !/build.xml

@@ -27,20 +27,22 @@ $doc->addStyleSheet(ModBPSliderHelper::getAssetUrl('/modules/mod_bpslider/assets
 if ($effect === 'slide-vertical')
 {
 	$doc->addScriptDeclaration("
-        var {$id}CountHeight = function(){
-            var maxHeight = $min_height;
-            var slides = $('#$id .swiper-slide>div') 
-            slides.each(function(idx,el){
-                var h = $(el).outerHeight();
-                if( h>maxHeight) maxHeight = h; 
-            });
-            slides.each(function(idx,el){
-                $(el).css('height', maxHeight+'px');
-            });
-            
-            $('#$id').css('height', maxHeight+'px');
-        }
         jQuery(function($){
+        
+            var {$id}CountHeight = function(){
+                var maxHeight = $min_height;
+                var slides = $('#$id .swiper-slide>div') 
+                slides.each(function(idx,el){
+                    var h = $(el).outerHeight();
+                    if( h>maxHeight) maxHeight = h; 
+                });
+                slides.each(function(idx,el){
+                    $(el).css('height', maxHeight+'px');
+                });
+                
+                $('#$id').css('height', maxHeight+'px');
+            }
+            
             {$id}CountHeight();
             $(window).resize({$id}CountHeight);
         });

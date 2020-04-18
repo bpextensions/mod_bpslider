@@ -25,11 +25,11 @@ Encore
         joomla: 'Joomla',
     })
     .addEntry('module', [
-        './modules/mod_bpslider/.dev/js/module.js',
-        './modules/mod_bpslider/.dev/scss/module.scss',
+        './.dev/js/module.js',
+        './.dev/scss/module.scss',
     ])
     .addEntry('theme', [
-        './modules/mod_bpslider/.dev/scss/theme.scss',
+        './.dev/scss/theme.scss',
     ])
     .configureFilenames({
         css: '[name]-[hash:6].css',

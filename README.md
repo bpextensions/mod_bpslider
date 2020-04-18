@@ -30,6 +30,10 @@ Here are instructions how to build installation package from scratch.
 
 ## Changelog
 
+### v1.0.6
+- Re-licensing to match JED requirements ...
+- Fixed the slide background position.
+
 ### v1.0.4
 - Added missing polish translations.
 - Added minimum slider height setting.
