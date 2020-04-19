@@ -30,7 +30,7 @@ Here are instructions how to build installation package from scratch.
 
 ## Changelog
 
-### v1.0.6
+### v1.0.5
 - Re-licensing to match JED requirements ...
 - Fixed the slide background position.
 
