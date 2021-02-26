@@ -54,12 +54,11 @@ abstract class ModBPSliderHelper
 	 *
 	 * @return string
 	 *
-	 * @throws JsonException
 	 * @since 1.0.0
 	 */
 	public static function getAssetUrl(string $url): string
 	{
-		$manifest = json_decode(file_get_contents(JPATH_SITE . '/modules/mod_bpslider/assets/manifest.json'), true, 512, JSON_THROW_ON_ERROR);
+		$manifest = json_decode(file_get_contents(JPATH_SITE . '/modules/mod_bpslider/assets/manifest.json'), true, 512);
 
 		$url = ltrim($url, '/');
 		if (array_key_exists($url, $manifest))
