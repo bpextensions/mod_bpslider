@@ -6,6 +6,22 @@
     <php expression="date('F Y')" returnProperty="build.date"/>
     <php expression="date('Y')" returnProperty="build.year"/>
 
+    <target name="test">
+        <echo msg="Test each extension before build"/>
+        <phingcall target="test:compatibility"/>
+        <phingcall target="test:mod_bpslider"/>
+    </target>
+
+    <target name="test:compatibility">
+        <echo msg="Testing PHP 7.2 Compatibility"/>
+        <exec command="composer test:compatibility" checkreturn="true"/>
+    </target>
+
+    <target name="test:mod_bpslider">
+        <echo msg="Testing mod_bpslider"/>
+        <echo msg="No tests yet."/>
+    </target>
+
     <target name="build:mod_bpslider">
         <echo msg="Creating module directory"/>
         <mkdir dir="./.build/mod_bpslider"/>
@@ -43,11 +59,13 @@
     </target>
 
     <target name="build">
+        <phingcall target="test"/>
+
         <echo msg="Creating build directory ./.build"/>
         <mkdir dir="./.build"/>
 
         <echo msg="Building each of the extensions"/>
-        <phingcall target="build:mod_bpslider"></phingcall>
+        <phingcall target="build:mod_bpslider"/>
 
     </target>
 
@@ -58,8 +76,8 @@
 
     <target name="build:clean">
         <echo msg="Creating a clean build."/>
-        <phingcall target="clean"></phingcall>
-        <phingcall target="build"></phingcall>
+        <phingcall target="clean"/>
+        <phingcall target="build"/>
     </target>
 
 </project>

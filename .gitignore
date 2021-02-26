@@ -7,6 +7,10 @@
 
 !/.dev
 !/LICENSE
+!/.github
+!/.github/**
+!/.phpcs
+!/.phpcs/**
 !/README.md
 !/build.xml
 !/composer.json
@@ -15,5 +19,6 @@
 !/package.json
 !/package-lock.json
 
-!build.properties
+!build.properties.dist
+build.properties
 !webpack.config.js

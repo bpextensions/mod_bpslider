@@ -5,11 +5,11 @@
     "main": "modules/mod_bpslider/.dev/js/app.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "dev": "./node_modules/.bin/encore dev",
-        "watch": "./node_modules/.bin/encore dev --watch",
-        "watch-prod": "./node_modules/.bin/encore prod --watch",
-        "prod": "./node_modules/.bin/encore prod --progress",
-        "build": "./node_modules/.bin/encore prod --progress"
+        "dev": "encore dev",
+        "watch": "encore dev --watch",
+        "watch-prod": "encore prod --watch",
+        "prod": "encore prod --progress",
+        "build": "encore prod --progress"
     },
     "respository": "https://github.com/bestproject/mod_bpslider",
     "author": "Artur Stępień",
@@ -21,7 +21,7 @@
     "devDependencies": {
         "@symfony/webpack-encore": "^0.28.3",
         "lodash": ">=4.17.13",
-        "node-sass": "^4.13.1",
+        "node-sass": "^4.14.1",
         "sass-loader": "^7.1.0",
         "swiper": "^4.5.0",
         "webpack-notifier": "^1.7.0"
