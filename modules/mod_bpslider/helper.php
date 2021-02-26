@@ -54,14 +54,15 @@ abstract class ModBPSliderHelper
 	 *
 	 * @return string
 	 *
+	 * @throws JsonException
 	 * @since 1.0.0
 	 */
 	public static function getAssetUrl(string $url): string
 	{
-		$manifest = json_decode(file_get_contents(JPATH_SITE . '/modules/mod_bpslider/assets/manifest.json'), true);
+		$manifest = json_decode(file_get_contents(JPATH_SITE . '/modules/mod_bpslider/assets/manifest.json'), true, 512, JSON_THROW_ON_ERROR);
 
 		$url = ltrim($url, '/');
-		if (key_exists($url, $manifest))
+		if (array_key_exists($url, $manifest))
 		{
 			$url = $manifest[$url];
 		}
@@ -122,13 +123,9 @@ abstract class ModBPSliderHelper
 			$options['loop'] = 'true';
 		}
 
-		if ($effect == 'slide-vertical')
+		if ($effect === 'slide-vertical')
 		{
 			$options['direction'] = 'vertical';
-		}
-		elseif ($effect == 'slide-horizontal')
-		{
-
 		}
 		else
 		{
