@@ -23,7 +23,7 @@
         "lodash": ">=4.17.13",
         "node-sass": "^5.0.0",
         "sass-loader": "11.0",
-        "swiper": "^4.5.0",
+        "swiper": "^6.5.1",
         "webpack-notifier": "^1.7.0"
     },
     "dependencies": {
