@@ -9,17 +9,20 @@
  * @author      ${author.name}
  */
 
+namespace BPExtensions\Module\BPSlider\Site\Helper;
+
 use Joomla\CMS\Router\Route;
+use Joomla\Component\Content\Site\Helper\RouteHelper;
 use Joomla\Registry\Registry;
 
 defined('_JEXEC') or die;
 
 /**
- * Helper for mod_bpslider
+ * Helper for BP Slider module.
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
-abstract class ModBPSliderHelper
+abstract class BPToolbarHelper
 {
 
 	/**
@@ -36,37 +39,12 @@ abstract class ModBPSliderHelper
 		switch ($slide->button_type)
 		{
 			case 'article':
-				return Route::_(ContentHelperRoute::getArticleRoute($slide->button_article));
-				break;
+				return Route::_(RouteHelper::getArticleRoute($slide->button_article));
 			case 'menu':
 				return Route::_('index.php?Itemid=' . $slide->button_menu);
-
-				break;
 			default:
 				return $slide->button_url;
 		}
-	}
-
-	/**
-	 * Get asset url.
-	 *
-	 * @param   string  $url  Asset regular url.
-	 *
-	 * @return string
-	 *
-	 * @since 1.0.0
-	 */
-	public static function getAssetUrl(string $url): string
-	{
-		$manifest = json_decode(file_get_contents(JPATH_SITE . '/modules/mod_bpslider/assets/manifest.json'), true, 512);
-
-		$url = ltrim($url, '/');
-		if (array_key_exists($url, $manifest))
-		{
-			$url = $manifest[$url];
-		}
-
-		return $url;
 	}
 
 	/**

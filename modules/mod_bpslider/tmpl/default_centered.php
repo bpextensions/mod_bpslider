@@ -6,10 +6,20 @@
  *
  * @copyright   Copyright (C) ${build.year} ${copyrights}, All rights reserved.
  * @license     ${license.name}; see ${license.url}
- *
  */
 
 defined('_JEXEC') or die;
+
+use BPExtensions\Module\BPSlider\Site\Helper\BPToolbarHelper;
+
+/**
+ * @var boolean $has_desc
+ * @var boolean $slide_button
+ * @var string  $slide_image
+ * @var string  $slide_button_title
+ * @var string  $slide_title
+ * @var object  $slide
+ */
 
 ?>
 <?php if ($has_desc): ?>
@@ -29,7 +39,7 @@ defined('_JEXEC') or die;
                         </div>
 					<?php endif ?>
 					<?php if ($slide_button): ?>
-                        <a href="<?php echo ModBPSliderHelper::getButtonUrl($slide) ?>" class="btn btn-primary">
+                        <a href="<?php echo BPToolbarHelper::getButtonUrl($slide) ?>" class="btn btn-primary">
 							<?php echo $slide_button_title ?>
                         </a>
 					<?php endif ?>
@@ -48,7 +58,7 @@ defined('_JEXEC') or die;
                         </div>
 					<?php endif ?>
 					<?php if ($slide_button): ?>
-                        <a href="<?php echo ModBPSliderHelper::getButtonUrl($slide) ?>" class="btn btn-primary">
+                        <a href="<?php echo BPToolbarHelper::getButtonUrl($slide) ?>" class="btn btn-primary">
 							<?php echo $slide_button_title ?>
                         </a>
 					<?php endif ?>

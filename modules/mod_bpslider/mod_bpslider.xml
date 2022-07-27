@@ -11,19 +11,19 @@
     <description>MOD_BPSLIDER_XML_DESCRIPTION</description>
 
     <files>
-        <folder>assets</folder>
         <folder>forms</folder>
-        <folder>language</folder>
         <folder>tmpl</folder>
-        <filename>helper.php</filename>
+        <folder>src</folder>
         <filename module="mod_bpslider">mod_bpslider.php</filename>
     </files>
 
+    <namespace path="src">BPExtensions\Module\BPSlider</namespace>
+
     <languages folder="language">
-        <language tag="pl-PL">pl-PL/pl-PL.mod_bpslider.ini</language>
-        <language tag="pl-PL">pl-PL/pl-PL.mod_bpslider.sys.ini</language>
-        <language tag="en-GB">en-GB/en-GB.mod_bpslider.ini</language>
-        <language tag="en-GB">en-GB/en-GB.mod_bpslider.sys.ini</language>
+        <language tag="pl-PL">pl-PL/mod_bpslider.ini</language>
+        <language tag="pl-PL">pl-PL/mod_bpslider.sys.ini</language>
+        <language tag="en-GB">en-GB/mod_bpslider.ini</language>
+        <language tag="en-GB">en-GB/mod_bpslider.sys.ini</language>
     </languages>
 
     <config>
@@ -98,11 +98,9 @@
                 <field
                         name="layout"
                         type="modulelayout"
-                        default="default"
                         label="JFIELD_ALT_LAYOUT_LABEL"
-                        description="JFIELD_ALT_MODULE_LAYOUT_DESC">
-
-                </field>
+                        class="form-select"
+                        validate="moduleLayout"/>
 
                 <field
                         name="moduleclass_sfx"

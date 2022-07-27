@@ -1,10 +1,5 @@
 <?php
 
-use Joomla\CMS\Helper\ModuleHelper;
-use Joomla\Registry\Registry;
-
-defined('_JEXEC') or die;
-
 /**
  * @package     ${package}
  * @subpage     ${package}
@@ -14,19 +9,38 @@ defined('_JEXEC') or die;
  * @author      ${author.name}
  */
 
+use BPExtensions\Module\BPSlider\Site\Helper\AssetsHelper;
+use Joomla\CMS\Helper\ModuleHelper;
+use Joomla\CMS\WebAsset\WebAssetManager;
+use Joomla\Registry\Registry;
+
+defined('_JEXEC') or die;
+
 /**
- * @var Registry $params
+ * @var Registry        $params
+ * @var AssetsHelper    $assetsHelper
+ * @var WebAssetManager $assetsManager
+ * @var array           $options
+ * @var array           $slides
+ * @var stdClass        $module
+ * @var string          $effect
+ * @var string          $moduleclass_sfx
+ * @var string          $layout
+ * @var int             $id
+ * @var int             $min_height
+ * @var boolean         $navigation
+ * @var boolean         $pagination
  */
 
-JHtml::_('jquery.framework');
-$doc->addScript(ModBPSliderHelper::getAssetUrl('/modules/mod_bpslider/assets/module.js'), ['version' => 'auto']);
-$doc->addStyleSheet(ModBPSliderHelper::getAssetUrl('/modules/mod_bpslider/assets/module.css'), ['version' => 'auto']);
-$doc->addStyleSheet(ModBPSliderHelper::getAssetUrl('/modules/mod_bpslider/assets/theme.css'), ['version' => 'auto']);
+// Add module assets
+$assetsManager->useScript('jquery');
+$assetsHelper->addEntryPointAssets('module');
+$assetsHelper->addEntryPointAssets('theme');
 
 // Fix slider height for vertical height
 if ($effect === 'slide-vertical')
 {
-	$doc->addScriptDeclaration("
+	$assetsManager->addInlineScript("
         jQuery(function($){
         
             var {$id}CountHeight = function(){
@@ -52,13 +66,13 @@ if ($effect === 'slide-vertical')
 // Min slider height
 if ($min_height)
 {
-	$doc->addStyleDeclaration("
+	$assetsManager->addInlineStyle("
         #$id .swiper-slide>div{min-height: {$min_height}px};
     ");
 }
 
-$options = json_encode((object) $options);
-$doc->addScriptDeclaration("
+$options = json_encode($options, JSON_FORCE_OBJECT);
+$assetsManager->addInlineScript("
     jQuery(function($){
         var ModBPSlider{$module->id} = new Swiper('#$id', $options);
     });
@@ -68,22 +82,22 @@ $doc->addScriptDeclaration("
 
     <div id="<?php echo $id ?>" class="swiper-container">
         <div class="swiper-wrapper">
-            <?php foreach ($slides as $slide):
-                $slide_title = $slide->title;
-                $slide_image = $slide->image;
-                $slide_text = $slide->text;
-                $slide_button = $slide->button;
-                $slide_button_type = $slide->button_type;
-                $slide_button_title = $slide->button_title;
-                $has_desc = (!empty($slide_title) or !empty($slide_text));
-                ?>
+			<?php foreach ($slides as $slide):
+				$slide_title = $slide->title;
+				$slide_image = $slide->image;
+				$slide_text = $slide->text;
+				$slide_button = $slide->button;
+				$slide_button_type = $slide->button_type;
+				$slide_button_title = $slide->button_title;
+				$has_desc = (!empty($slide_title) or !empty($slide_text));
+				?>
                 <div class="swiper-slide">
-                    <?php require ModuleHelper::getLayoutPath('mod_bpslider', $layout . '_' . $slide->layout) ?>
+					<?php require ModuleHelper::getLayoutPath('mod_bpslider', $layout . '_' . $slide->layout) ?>
                 </div>
-            <?php endforeach ?>
+			<?php endforeach ?>
         </div>
 
-        <?php if ($navigation): ?>
+		<?php if ($navigation): ?>
             <!-- Add Arrows -->
             <div class="swiper-button-next" id="<?php echo $id ?>-swiper-button-next"></div>
             <div class="swiper-button-prev" id="<?php echo $id ?>-swiper-button-prev"></div>

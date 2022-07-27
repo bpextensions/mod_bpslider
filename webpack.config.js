@@ -1,4 +1,10 @@
-var Encore = require('@symfony/webpack-encore');
+const fs = require('fs');
+const Encore = require('@symfony/webpack-encore');
+
+// Create plugins assets build directory
+fs.mkdir(__dirname + '/media/mod_bpslider', {recursive: true}, (err) => {
+    if (err) throw err;
+});
 
 if (!Encore.isRuntimeEnvironmentConfigured()) {
     Encore.configureRuntimeEnvironment(process.env.NODE_ENV || 'dev');
@@ -6,8 +12,8 @@ if (!Encore.isRuntimeEnvironmentConfigured()) {
 
 // Module build configuration
 Encore
-    .setOutputPath('modules/mod_bpslider/assets')
-    .setPublicPath('/modules/mod_bpslider/assets/')
+    .setOutputPath('media/mod_bpslider')
+    .setPublicPath('/media/mod_bpslider/')
     .cleanupOutputBeforeBuild()
     .enableBuildNotifications()
     .enableSassLoader()
@@ -28,7 +34,7 @@ Encore
         './.dev/js/module.js',
         './.dev/scss/module.scss',
     ])
-    .addEntry('theme', [
+    .addStyleEntry('theme', [
         './.dev/scss/theme.scss',
     ])
     .configureFilenames({
