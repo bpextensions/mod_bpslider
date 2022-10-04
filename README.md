@@ -2,7 +2,7 @@
 
 ![PHP 7.2](https://github.com/bpextensions/mod_bpslider/workflows/PHP%207.2-8.0/badge.svg)
 
-Joomla! 3 responsive slider module based on Swiper and Bootstrap.
+Joomla! 4 responsive slider module based on Swiper and Bootstrap.
 
 ## Features
 
@@ -26,7 +26,7 @@ Joomla! 3 responsive slider module based on Swiper and Bootstrap.
 ## Requirements
 
 - PHP 7.2+
-- Joomla 3.9.x
+- Joomla 4.1.x
 
 ## How to build from repository
 
@@ -49,7 +49,12 @@ Here are instructions how to build installation package from scratch.
 
 ## Changelog
 
+### v2.0.0
+
+- Re-writting for Joomla! 4
+
 ### v1.0.5
+
 - Re-licensing to match JED requirements ...
 - Fixed the slide background position.
 

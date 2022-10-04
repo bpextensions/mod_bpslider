@@ -13,7 +13,7 @@
     </target>
 
     <target name="test:compatibility">
-        <echo msg="Testing PHP 7.2 Compatibility"/>
+        <echo msg="Testing PHP 7.2|8.0+ Compatibility"/>
         <exec command="composer test:compatibility" checkreturn="true"/>
     </target>
 
@@ -30,11 +30,36 @@
         <exec command="npm run prod" checkreturn="true"/>
 
         <echo msg="Building module installer"/>
+
         <copy todir="./.build/mod_bpslider">
             <fileset dir="./modules/mod_bpslider">
                 <include name="**/*"/>
                 <exclude name=".dev/**"/>
                 <exclude name=".dev/"/>
+            </fileset>
+            <filterchain>
+                <replacetokens begintoken="${" endtoken="}">
+                    <token key="build.date" value="${build.date}"/>
+                    <token key="build.year" value="${build.year}"/>
+                    <token key="copyrights" value="${copyrights}"/>
+                    <token key="license.name" value="${license.name}"/>
+                    <token key="license.url" value="${license.url}"/>
+                    <token key="build.version" value="${build.version}"/>
+                    <token key="build.release" value="${build.release}"/>
+                    <token key="package" value="${package}"/>
+                    <token key="subpackage" value="${subpackage}"/>
+                    <token key="author.url" value="${author.url}"/>
+                    <token key="author.name" value="${author.name}"/>
+                    <token key="author.email" value="${author.email}"/>
+                </replacetokens>
+            </filterchain>
+        </copy>
+
+        <echo msg="Prepare module media"/>
+
+        <copy todir="./.build/mod_bpslider/media">
+            <fileset dir="./media/mod_bpslider">
+                <include name="**/*"/>
             </fileset>
             <filterchain>
                 <replacetokens begintoken="${" endtoken="}">
