@@ -23,24 +23,25 @@ defined('_JEXEC') or die;
 
 ?>
 <?php if ($has_desc): ?>
-    <div class="text-center swiper-bg-image d-flex align-items-center"
+    <div class="text-center swiper-bg-image d-flex align-items-center h-100"
 		<?php if (!empty($slide_image)): ?> style="background-image:url('<?php echo $slide_image ?>');"<?php endif ?>>
 
-        <div class="row justify-content-center align-items-center">
+        <div class="row justify-content-center align-items-center w-100">
 
             <!-- Desktop layout-->
             <div class="col-12 col-lg-8 col-xl-6">
-                <div class="wrapper modbpslider-padding">
+                <div class="wrapper modbpslider-padding px-4 py-3">
 					<?php if (!empty($slide_title)): ?>
-                        <h4 class="title"><?php echo $slide_title ?></h4>
+                        <h4 class="title my-2"><?php echo $slide_title ?></h4>
 					<?php endif ?>
 					<?php if (!empty($slide_text)): ?>
-                        <div class="text">
+                        <div class="text my-2">
 							<?php echo $slide_text ?>
                         </div>
 					<?php endif ?>
 					<?php if ($slide_button): ?>
-                        <a href="<?php echo BPToolbarHelper::getButtonUrl($slide) ?>" class="btn btn-outline-light">
+                        <a href="<?php echo BPToolbarHelper::getButtonUrl($slide) ?>"
+                           class="btn btn-outline-light my-2">
 							<?php echo $slide_button_title ?>
                         </a>
 					<?php endif ?>
@@ -51,8 +52,7 @@ defined('_JEXEC') or die;
 
     </div>
 <?php else: ?>
-    <div
-            class="swiper-bg-image" <?php if (!empty($slide_image)): ?> style="background-image:url('<?php echo $slide_image ?>');"<?php endif ?>>
+    <div class="swiper-bg-image" <?php if (!empty($slide_image)): ?> style="background-image:url('<?php echo $slide_image ?>');"<?php endif ?>>
         <img src="<?php echo $slide_image ?>" alt="<?php echo htmlentities($slide_title) ?>"
              style="width:100%;opacity:0">
     </div>

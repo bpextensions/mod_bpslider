@@ -8,11 +8,11 @@
  */
 
 import jquery from 'jquery';
-import 'swiper/dist/css/swiper.css';
+import 'swiper/scss';
 import Swiper from 'swiper';
 
 // Expose jQuery
 const $ = jquery;
 global.$ = global.jQuery = $;
 
-window.Swiper = global.Swiper = Swiper;
+window.mod_bpslider_Swiper = global.mod_bpslider_Swiper = Swiper;

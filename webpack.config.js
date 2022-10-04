@@ -38,8 +38,8 @@ Encore
         './.dev/scss/theme.scss',
     ])
     .configureFilenames({
-        css: '[name]-[contenthash].css',
-        js: '[name]-[contenthash].js'
+        css: 'css/[name]-[contenthash].css',
+        js: 'js/[name]-[contenthash].js'
     });
 
 // Export configurations
