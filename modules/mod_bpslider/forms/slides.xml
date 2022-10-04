@@ -18,9 +18,10 @@
            label="MOD_BPSLIDER_FIELD_SLIDES_TEXT_LABEL"
            description="MOD_BPSLIDER_FIELD_SLIDES_TEXT_DESC"/>
 
-    <field name="button" type="radio" filter="INT"
+    <field name="button" type="radio"
            default="0"
-           class="btn-group btn-group-yesno"
+           layout="joomla.form.field.radio.switcher"
+           filter="boolean"
            label="MOD_BPSLIDER_FIELD_SLIDES_BUTTON_LABEL"
            description="MOD_BPSLIDER_FIELD_SLIDES_BUTTON_DESC"
     >

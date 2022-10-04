@@ -78,7 +78,7 @@ $assetsManager->addInlineScript("
     });
 ");
 ?>
-<div class="modbpslider<?php echo $moduleclass_sfx ?> bootstrap2">
+<div class="modbpslider<?php echo $moduleclass_sfx ?> bootstrap4">
 
     <div id="<?php echo $id ?>" class="swiper-container">
         <div class="swiper-wrapper">

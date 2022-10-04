@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="module" version="3.8" client="site" method="upgrade">
+<extension type="module" client="site" method="upgrade">
     <name>mod_bpslider</name>
     <author>${author.name}</author>
     <creationDate>${build.date}</creationDate>
@@ -17,6 +17,8 @@
         <filename module="mod_bpslider">mod_bpslider.php</filename>
     </files>
 
+    <media destination="mod_bpslider" folder="media"/>
+
     <namespace path="src">BPExtensions\Module\BPSlider</namespace>
 
     <languages folder="language">
@@ -30,11 +32,12 @@
         <fields name="params">
             <fieldset name="basic">
                 <field name="autoplay" type="radio" default="1"
-                       class="btn-group btn-group-yesno"
+                       layout="joomla.form.field.radio.switcher"
+                       filter="boolean"
                        label="MOD_BPSLIDER_FIELD_AUTOPLAY_LABEL"
                        description="MOD_BPSLIDER_FIELD_AUTOPLAY_LABEL">
-                    <option value="1">JYES</option>
                     <option value="0">JNO</option>
+                    <option value="1">JYES</option>
                 </field>
                 <field name="effect" type="list" default="slide-horizontal"
                        label="MOD_BPSLIDER_FIELD_EFFECT_LABEL"
@@ -51,7 +54,7 @@
                        label="MOD_BPSLIDER_FIELD_MIN_HEIGHT_LABEL"
                        description="MOD_BPSLIDER_FIELD_MIN_HEIGHT_DESC"
                 />
-                <field name="autoplay_delay" type="integer" first="1" step="1" last="30" filter="INT" default="4"
+                <field name="autoplay_delay" type="number" first="1" step="1" last="30" filter="INT" default="4"
                        showon="autoplay:1"
                        label="MOD_BPSLIDER_FIELD_AUTOPLAY_DELAY_LABEL"
                        description="MOD_BPSLIDER_FIELD_AUTOPLAY_DELAY_DESC"
@@ -62,25 +65,28 @@
                        description="MOD_BPSLIDER_FIELD_TRANSITION_TIME_DESC"
                 />
                 <field name="pagination" type="radio" default="1"
-                       class="btn-group btn-group-yesno"
+                       layout="joomla.form.field.radio.switcher"
+                       filter="boolean"
                        label="MOD_BPSLIDER_FIELD_PAGINATION_LABEL"
                        description="MOD_BPSLIDER_FIELD_PAGINATION_LABEL">
-                    <option value="1">JYES</option>
                     <option value="0">JNO</option>
+                    <option value="1">JYES</option>
                 </field>
                 <field name="navigation" type="radio" default="1"
-                       class="btn-group btn-group-yesno"
+                       layout="joomla.form.field.radio.switcher"
+                       filter="boolean"
                        label="MOD_BPSLIDER_FIELD_NAVIGATION_LABEL"
                        description="MOD_BPSLIDER_FIELD_NAVIGATION_LABEL">
-                    <option value="1">JYES</option>
                     <option value="0">JNO</option>
+                    <option value="1">JYES</option>
                 </field>
                 <field name="loop" type="radio" default="1"
-                       class="btn-group btn-group-yesno"
+                       layout="joomla.form.field.radio.switcher"
+                       filter="boolean"
                        label="MOD_BPSLIDER_FIELD_LOOP_LABEL"
                        description="MOD_BPSLIDER_FIELD_LOOP_LABEL">
-                    <option value="1">JYES</option>
                     <option value="0">JNO</option>
+                    <option value="1">JYES</option>
                 </field>
             </fieldset>
             <fieldset name="slides"
