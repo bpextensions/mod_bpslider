@@ -74,14 +74,14 @@ if ($min_height)
 $options = json_encode($options, JSON_FORCE_OBJECT);
 $assetsManager->addInlineScript("
     jQuery(function($){
-        var ModBPSlider{$module->id} = new Swiper('#$id', $options);
+        var ModBPSlider{$module->id} = new mod_bpslider_Swiper('#$id', $options);
     });
 ");
 ?>
-<div class="modbpslider<?php echo $moduleclass_sfx ?> bootstrap4">
+<div class="modbpslider<?php echo $moduleclass_sfx ?>">
 
-    <div id="<?php echo $id ?>" class="swiper-container">
-        <div class="swiper-wrapper">
+    <div id="<?php echo $id ?>" class="swiper">
+        <div class="swiper-wrapper align-items-stretch">
 			<?php foreach ($slides as $slide):
 				$slide_title = $slide->title;
 				$slide_image = $slide->image;
@@ -89,9 +89,9 @@ $assetsManager->addInlineScript("
 				$slide_button = $slide->button;
 				$slide_button_type = $slide->button_type;
 				$slide_button_title = $slide->button_title;
-				$has_desc = (!empty($slide_title) or !empty($slide_text));
+				$has_desc = (!empty($slide_title) || !empty($slide_text));
 				?>
-                <div class="swiper-slide">
+                <div class="swiper-slide h-auto">
 					<?php require ModuleHelper::getLayoutPath('mod_bpslider', $layout . '_' . $slide->layout) ?>
                 </div>
 			<?php endforeach ?>

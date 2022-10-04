@@ -17,7 +17,12 @@
         <filename module="mod_bpslider">mod_bpslider.php</filename>
     </files>
 
-    <media destination="mod_bpslider" folder="media"/>
+    <media folder="media" destination="mod_bpslider">
+        <folder>css</folder>
+        <folder>js</folder>
+        <filename>entrypoints.json</filename>
+        <filename>manifest.json</filename>
+    </media>
 
     <namespace path="src">BPExtensions\Module\BPSlider</namespace>
 

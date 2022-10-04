@@ -23,7 +23,7 @@ defined('_JEXEC') or die;
  * @var WebAssetManager $assetsManager
  */
 
-$moduleclass_sfx = htmlspecialchars($params->get('moduleclass_sfx'));
+$moduleclass_sfx = htmlspecialchars($params->get('moduleclass_sfx', ''));
 $slides          = (array) $params->get('slides', []);
 $id              = 'modbpslider' . $module->id;
 $navigation      = (bool) $params->get('navigation', 1);
