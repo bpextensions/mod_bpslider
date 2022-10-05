@@ -8,8 +8,8 @@
  */
 
 import jquery from 'jquery';
-import 'swiper/scss';
-import Swiper from 'swiper';
+import 'swiper/css/bundle';
+import Swiper from 'swiper/bundle';
 
 // Expose jQuery
 const $ = jquery;
