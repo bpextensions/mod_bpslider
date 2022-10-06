@@ -11,7 +11,10 @@
 
 namespace BPExtensions\Module\BPSlider\Site\Helper;
 
+use Exception;
+use Joomla\CMS\Factory;
 use Joomla\CMS\Router\Route;
+use Joomla\Component\Content\Administrator\Table\ArticleTable;
 use Joomla\Component\Content\Site\Helper\RouteHelper;
 use Joomla\Registry\Registry;
 
@@ -32,6 +35,7 @@ abstract class BPToolbarHelper
 	 *
 	 * @return string
 	 *
+	 * @throws Exception
 	 * @since 1.0.0
 	 */
 	public static function getButtonUrl(object $slide): string
@@ -39,9 +43,24 @@ abstract class BPToolbarHelper
 		switch ($slide->button_type)
 		{
 			case 'article':
+				$article_id = (int) $slide->button_article;
+				if ($article_id > 0)
+				{
+					$article_table = new ArticleTable(Factory::getDbo());
+					if ($article_table->load($article_id))
+					{
+						$article = (object) $article_table->getProperties();
+
+						return Route::_(RouteHelper::getArticleRoute($article_id . ':' . $article->alias, $article->catid, $article->language));
+					}
+
+				}
+
 				return Route::_(RouteHelper::getArticleRoute($slide->button_article));
+
 			case 'menu':
-				return Route::_('index.php?Itemid=' . $slide->button_menu);
+				return Route::_('index.php?Itemid=' . (int) $slide->button_menu);
+
 			default:
 				return $slide->button_url;
 		}

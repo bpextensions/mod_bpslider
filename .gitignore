@@ -6,6 +6,8 @@
 /modules/mod_bpslider/assets/*
 
 !/.dev
+!/test
+!/test/*
 !/LICENSE
 !/.github
 !/.github/**
