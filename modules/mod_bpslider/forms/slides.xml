@@ -48,8 +48,8 @@
            label="MOD_BPSLIDER_FIELD_SLIDES_BUTTON_URL_LABEL"
            description="MOD_BPSLIDER_FIELD_SLIDES_BUTTON_URL_DESC"/>
 
-    <field name="button_menu" type="modal_menu" showon="button_type:menu[AND]button:1"
-           addfieldpath="/administrator/components/com_menus/models/fields"
+    <field name="button_menu" type="Modal_Menu" showon="button_type:menu[AND]button:1"
+           addfieldprefix="Joomla\Component\Menus\Administrator\Field"
            select="true"
            new="true"
            edit="true"
@@ -59,9 +59,10 @@
            description="MOD_BPSLIDER_FIELD_SLIDES_BUTTON_MENU_DESC"/>
 
     <field name="button_article" type="modal_article" showon="button_type:article[AND]button:1"
-           addfieldpath="/administrator/components/com_content/models/fields"
+           addfieldprefix="Joomla\Component\Content\Administrator\Field"
            label="MOD_BPSLIDER_FIELD_SLIDES_BUTTON_ARTICLE_LABEL"
            description="MOD_BPSLIDER_FIELD_SLIDES_BUTTON_ARTICLE_DESC"
+           filter="integer"
            select="true"
            new="true"
            edit="true"
