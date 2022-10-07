@@ -34,8 +34,8 @@ defined('_JEXEC') or die;
 
 // Add module assets
 $assetsManager->useScript('jquery');
-$assetsHelper->addEntryPointAssets('module');
-$assetsHelper->addEntryPointAssets('theme');
+$assetsHelper->addEntryPointAssets('module'); // <- Module core assets (required)
+$assetsHelper->addEntryPointAssets('theme'); // <- Module basic styling (optional)
 
 // Fix slider height for vertical height
 if ($effect === 'slide-vertical')
