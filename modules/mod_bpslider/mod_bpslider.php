@@ -17,6 +17,9 @@ use Joomla\Registry\Registry;
 
 defined('_JEXEC') or die;
 
+// Fixing the wrong class
+class_alias(SliderHelper::class, 'BPExtensions\Module\BPSlider\Site\Helper\BPToolbarHelper');
+
 /**
  * @var Registry        $params
  * @var stdClass        $module
