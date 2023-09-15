@@ -56,7 +56,7 @@ Here are instructions how to build installation package from scratch.
 
 ### v2.0.0
 
-- Re-writting for Joomla! 4
+- Re-writing for Joomla! 4
 
 ### v1.0.5
 
