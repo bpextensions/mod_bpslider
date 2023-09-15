@@ -67,7 +67,7 @@ if ($effect === 'slide-vertical')
 if ($min_height)
 {
 	$assetsManager->addInlineStyle("
-        #$id .swiper-slide>div{min-height: {$min_height}px};
+        #$id .swiper-slide>div{min-height: {$min_height}px}
     ");
 }
 
