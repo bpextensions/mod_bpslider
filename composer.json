@@ -17,5 +17,10 @@
     },
     "require": {
         "ext-json": "*"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
     }
 }

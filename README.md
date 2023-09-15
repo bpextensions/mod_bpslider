@@ -49,9 +49,14 @@ Here are instructions how to build installation package from scratch.
 
 ## Changelog
 
+### v2.0.1
+
+- Added the ability to have multiline and responsive title
+- Migrated from `node-sass` to `sass`
+
 ### v2.0.0
 
-- Re-writting for Joomla! 4
+- Re-writing for Joomla! 4
 
 ### v1.0.5
 

@@ -25,7 +25,7 @@ defined('_JEXEC') or die;
  *
  * @since 2.0.0
  */
-abstract class BPToolbarHelper
+abstract class SliderHelper
 {
 
 	/**
@@ -129,6 +129,21 @@ abstract class BPToolbarHelper
 		}
 
 		return $options;
+	}
+
+	/**
+	 * Break text into new lines
+	 *
+	 * @param   string  $text
+	 * @param   string  $break_html
+	 *
+	 * @return string
+	 *
+	 * @since 2.0.1
+	 */
+	public static function nl(string $text, string $break_html = '<br />'): string
+	{
+		return str_ireplace('<br />', $break_html, nl2br($text));
 	}
 
 }

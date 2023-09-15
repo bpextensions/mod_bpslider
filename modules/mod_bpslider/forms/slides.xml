@@ -5,11 +5,12 @@
            label="MOD_BPSLIDER_FIELD_SLIDES_IMAGE_LABEL"
            description="MOD_BPSLIDER_FIELD_SLIDES_IMAGE_DESC"/>
 
-    <field name="title" type="text"
+    <field name="title" type="textarea"
            label="MOD_BPSLIDER_FIELD_SLIDES_TITLE_LABEL"
            description="MOD_BPSLIDER_FIELD_SLIDES_TITLE_DESC"
            class="input-xxlarge input-large-text"
-           size="40"
+           rows="2"
+           filter="SAFEHTML"
            maxlength="100"
     />
 

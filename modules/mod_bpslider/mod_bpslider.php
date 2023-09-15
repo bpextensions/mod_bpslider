@@ -9,13 +9,16 @@
  */
 
 use BPExtensions\Module\BPSlider\Site\Helper\AssetsHelper;
-use BPExtensions\Module\BPSlider\Site\Helper\BPToolbarHelper;
+use BPExtensions\Module\BPSlider\Site\Helper\SliderHelper;
 use Joomla\CMS\Factory;
 use Joomla\CMS\Helper\ModuleHelper;
 use Joomla\CMS\WebAsset\WebAssetManager;
 use Joomla\Registry\Registry;
 
 defined('_JEXEC') or die;
+
+// Fixing the wrong class
+class_alias(SliderHelper::class, 'BPExtensions\Module\BPSlider\Site\Helper\BPToolbarHelper');
 
 /**
  * @var Registry        $params
@@ -34,7 +37,7 @@ $layout          = $params->get('layout', 'default');
 
 $params->def('id', $id);
 
-$options       = BPToolbarHelper::getOptions($params);
+$options       = SliderHelper::getOptions($params);
 $assetsManager = Factory::getApplication()->getDocument()->getWebAssetManager();
 $assetsHelper  = new AssetsHelper(pathinfo(__FILE__, PATHINFO_FILENAME), $assetsManager);
 
