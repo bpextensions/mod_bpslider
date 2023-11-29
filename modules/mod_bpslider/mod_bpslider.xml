@@ -144,7 +144,8 @@
     </config>
 
     <updateservers>
-        <server type="extension" priority="2" name="BP Slider">https://free.updates.bpextensions.com/mod_bpslider.xml
+        <server type="extension" priority="2" name="BP Slider">
+            https://free.updates.bpextensions.com/mod_bpslider.xml
         </server>
     </updateservers>
 
