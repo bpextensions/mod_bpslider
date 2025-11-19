@@ -19,12 +19,12 @@
     },
     "homepage": "https://github.com/bestproject/mod_bpslider",
     "devDependencies": {
-        "@symfony/webpack-encore": "^4.0.0",
+        "@symfony/webpack-encore": "latest",
         "core-js": "^3.6.4",
         "lodash": ">=4.17.13",
-        "sass-loader": "^13.0.2",
-        "swiper": "^8.4.2",
-        "webpack-notifier": "^1.7.0"
+        "sass-loader": "latest",
+        "swiper": "^8",
+        "webpack-notifier": "latest"
     },
     "browserslist": [
         "> 0.25%",
@@ -32,6 +32,6 @@
         "IE 11"
     ],
     "dependencies": {
-        "sass": "^1.67.0"
+        "sass": "latest"
     }
 }

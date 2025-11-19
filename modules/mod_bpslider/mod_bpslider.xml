@@ -98,7 +98,7 @@
                       label="MOD_BPSLIDER_FIELDSET_SLIDES_LABEL"
                       description="MOD_BPSLIDER_FIELDSET_SLIDES_DESC"
             >
-                <field name="slides" type="subform" required="true" min="1"
+                <field name="slides" type="subform" required="true"
                        formsource="modules/mod_bpslider/forms/slides.xml" multiple="true"
                        label="MOD_BPSLIDER_FIELD_SLIDES_LABEL"
                        description="MOD_BPSLIDER_FIELD_SLIDES_DESC"

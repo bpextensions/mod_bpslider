@@ -71,7 +71,7 @@ if ($min_height)
     ");
 }
 
-$options = json_encode($options, JSON_FORCE_OBJECT);
+$options = json_encode($options, JSON_THROW_ON_ERROR | JSON_FORCE_OBJECT);
 $assetsManager->addInlineScript("
     jQuery(function($){
         var ModBPSlider{$module->id} = new mod_bpslider_Swiper('#$id', $options);

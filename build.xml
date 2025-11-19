@@ -14,7 +14,9 @@
 
     <target name="test:compatibility">
         <echo msg="Testing PHP 7.2|8.0+ Compatibility"/>
-        <exec command="composer test:compatibility" checkreturn="true"/>
+        <exec command="composer" checkreturn="true">
+            <arg value="test:compatibility"/>
+        </exec>
     </target>
 
     <target name="test:mod_bpslider">
@@ -27,7 +29,10 @@
         <mkdir dir="./.build/mod_bpslider"/>
 
         <echo msg="Building assets with Webpack"/>
-        <exec command="npm run prod" checkreturn="true"/>
+        <exec command="npm " checkreturn="true">
+            <arg value="run"/>
+            <arg value="prod"/>
+        </exec>
 
         <echo msg="Building module installer"/>
 
