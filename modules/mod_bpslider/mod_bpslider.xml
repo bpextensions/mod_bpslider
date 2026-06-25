@@ -20,7 +20,7 @@
     <media folder="media" destination="mod_bpslider">
         <folder>css</folder>
         <folder>js</folder>
-        <filename>entrypointsw.json</filename>
+        <filename>entrypoints.json</filename>
         <filename>manifest.json</filename>
     </media>
 
