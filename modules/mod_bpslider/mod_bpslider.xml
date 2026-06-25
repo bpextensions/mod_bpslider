@@ -13,14 +13,14 @@
     <files>
         <folder>forms</folder>
         <folder>tmpl</folder>
+        <folder module="mod_bpslider">services</folder>
         <folder>src</folder>
-        <filename module="mod_bpslider">mod_bpslider.php</filename>
     </files>
 
     <media folder="media" destination="mod_bpslider">
         <folder>css</folder>
         <folder>js</folder>
-        <filename>entrypoints.json</filename>
+        <filename>entrypointsw.json</filename>
         <filename>manifest.json</filename>
     </media>
 

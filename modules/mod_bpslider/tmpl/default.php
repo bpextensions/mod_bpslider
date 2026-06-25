@@ -9,12 +9,17 @@
  * @author      ${author.name}
  */
 
+// phpcs:disable PSR1.Files.SideEffects
+\defined('_JEXEC') or die;
+
+// phpcs:enable PSR1.Files.SideEffects
+
 use BPExtensions\Module\BPSlider\Site\Helper\AssetsHelper;
 use Joomla\CMS\Helper\ModuleHelper;
+use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\WebAsset\WebAssetManager;
 use Joomla\Registry\Registry;
-
-defined('_JEXEC') or die;
+use Joomla\Utilities\ArrayHelper;
 
 /**
  * @var Registry        $params
@@ -26,7 +31,7 @@ defined('_JEXEC') or die;
  * @var string          $effect
  * @var string          $moduleclass_sfx
  * @var string          $layout
- * @var int             $id
+ * @var string $id
  * @var int             $min_height
  * @var boolean         $navigation
  * @var boolean         $pagination
@@ -77,6 +82,21 @@ $assetsManager->addInlineScript("
         var ModBPSlider{$module->id} = new mod_bpslider_Swiper('#$id', $options);
     });
 ");
+$assetsManager->addInlineStyle(
+        "
+    @media screen and (min-width: 768px) {
+        #$id .swiper-bg-image {
+            background-image: var(--slide-image);
+        }
+    }
+    @media screen and (max-width: 767px) {
+        #$id .swiper-bg-image {
+            background-image: var(--slide-image-mobile);
+        }
+    }
+"
+);
+
 ?>
 <div class="modbpslider<?php echo $moduleclass_sfx ?>">
 
@@ -85,13 +105,27 @@ $assetsManager->addInlineScript("
 			<?php foreach ($slides as $slide):
 				$slide_title = $slide->title;
 				$slide_image = $slide->image;
+                $slide_image_mobile = $slide->image_mobile;
 				$slide_text = $slide->text;
 				$slide_button = $slide->button;
 				$slide_button_type = $slide->button_type;
 				$slide_button_title = $slide->button_title;
 				$has_desc = (!empty($slide_title) || !empty($slide_text));
+                if (!empty($slide_image)) {
+                    $slide_image_details = HTMLHelper::_('cleanImageURL', $slide_image);
+                    $slide_image         = $slide_image_details->url;
+                }
+                if (!empty($slide_image_mobile)) {
+                    $slide_image_mobile_details = HTMLHelper::_('cleanImageURL', $slide_image_mobile);
+                    $slide_image_mobile         = $slide_image_mobile_details->url;
+                }
+                $attributes = [
+                        'class' => 'swiper-slide h-auto',
+                        'style' => (!empty($slide_image) ? "--slide-image: url('$slide_image');" : '') . (!empty($slide_image_mobile) ? "--slide-image-mobile: url('$slide_image_mobile')" : ''),
+                ];
 				?>
-                <div class="swiper-slide h-auto">
+                <div <?php
+                echo ArrayHelper::toString($attributes) ?>>
 					<?php require ModuleHelper::getLayoutPath('mod_bpslider', $layout . '_' . $slide->layout) ?>
                 </div>
 			<?php endforeach ?>

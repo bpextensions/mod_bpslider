@@ -6,13 +6,23 @@
  * @license     ${license.name}; see ${license.url}
  *
  */
+.modbpslider {
+    .swiper-bg-image {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
 
-.swiper-bg-image {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
+        img {
+            object-fit: cover;
+        }
+    }
+}
 
-    img {
-        object-fit: cover;
+.modbpslider .swiper-bg-image {
+    @media screen and (min-width: 576px) {
+        background-image: var(--slide-image);
+    }
+    @media screen and (max-width: 575px) {
+        background-image: var(--slide-image-mobile);
     }
 }

@@ -15,6 +15,11 @@ use Joomla\CMS\WebAsset\WebAssetManager;
 use JsonException;
 use RuntimeException;
 
+// phpcs:disable PSR1.Files.SideEffects
+\defined('_JEXEC') or die;
+
+// phpcs:enable PSR1.Files.SideEffects
+
 class AssetsHelper
 {
 
@@ -55,10 +60,10 @@ class AssetsHelper
      * @param   string           $media_directory  Name of a directory inside /media that holds extension assets.
      * @param   WebAssetManager  $assetManager     Web assets manager.
      */
-    public function __construct(string $media_directory, WebAssetManager $assetManager)
+    public function __construct(WebAssetManager $assetManager)
     {
-        $this->media_directory_path = JPATH_ROOT . '/media/' . $media_directory;
-        $this->media_directory      = $media_directory;
+        $this->media_directory      = 'mod_bpslider';
+        $this->media_directory_path = JPATH_ROOT . '/media/' . $this->media_directory;
         $this->assetsManager        = $assetManager;
     }
 

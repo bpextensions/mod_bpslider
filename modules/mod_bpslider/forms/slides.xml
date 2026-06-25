@@ -2,8 +2,14 @@
 <form>
 
     <field name="image" type="media"
+           types="images"
            label="MOD_BPSLIDER_FIELD_SLIDES_IMAGE_LABEL"
            description="MOD_BPSLIDER_FIELD_SLIDES_IMAGE_DESC"/>
+
+    <field name="image_mobile" type="media"
+           types="images"
+           label="MOD_BPSLIDER_FIELD_SLIDES_IMAGE_MOBILE_LABEL"
+           description="MOD_BPSLIDER_FIELD_SLIDES_IMAGE_MOBILE_DESC"/>
 
     <field name="title" type="textarea"
            label="MOD_BPSLIDER_FIELD_SLIDES_TITLE_LABEL"
