@@ -13,8 +13,8 @@
     </target>
 
     <target name="test:compatibility">
-        <echo msg="Testing PHP 7.2|8.0+ Compatibility"/>
-        <exec command="composer" checkreturn="true">
+        <echo msg="Testing PHP 8.3+ Compatibility"/>
+        <exec executable="composer" checkreturn="true">
             <arg value="test:compatibility"/>
         </exec>
     </target>
@@ -29,7 +29,7 @@
         <mkdir dir="./.build/mod_bpslider"/>
 
         <echo msg="Building assets with Webpack"/>
-        <exec command="npm " checkreturn="true">
+        <exec executable="npm" checkreturn="true">
             <arg value="run"/>
             <arg value="prod"/>
         </exec>
@@ -101,7 +101,12 @@
 
     <target name="clean">
         <echo msg="Removing build directory ./.build if exists"/>
-        <delete dir="./.build" includeemptydirs="true"/>
+        <if>
+            <available file="./.build"/>
+            <then>
+                <delete dir="./.build" includeemptydirs="true"/>
+            </then>
+        </if>
     </target>
 
     <target name="build:clean">
